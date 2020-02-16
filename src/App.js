@@ -1,25 +1,42 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ArticlesList from "./components/articles/articles-list";
-import initialState from "./initials-state/initial-state";
 import Header from "./components/header/header";
-import MyModal from "./components/modal/modal";
-import CollectionPage from "./components/modal/test-modal";
-function App() {
-  const [articles, setArticles] = useState(initialState);
+import ModalFormAddArticles from "./components/modal/modal-form-add-articles";
+import { Input } from "antd";
+import useFilterArticles from "./hooks/use-filter-articles";
+import getInitialState from "./utils/getInitialstate";
 
-  const onDeleteArticle = id => {
-    setArticles((prev)=>{
-      return prev.filter((item)=>item.id !== id)
-    })
+function App() {
+  const [articles, setArticles] = useState(getInitialState);
+  const { filtredArticles, setFilterValue, filterValue } = useFilterArticles(
+    articles
+  );
+  const deleteArticleHandler = id => {
+    setArticles(prev => {
+      return prev.filter(item => item.id !== id);
+    });
   };
-  const onAddItem = () =>{}
+  const addArticlesHandler = item => {
+    setArticles(prev => [item, ...prev]);
+  };
+  useEffect(() => {
+    localStorage.setItem("data", JSON.stringify(articles));
+  }, [articles]);
   return (
     <div className="container">
       <Header />
-      {/* <MyModal/> */}
-      <CollectionPage/>
+      <ModalFormAddArticles addArticlesHandler={addArticlesHandler}>
+        <Input
+          value={filterValue}
+          onChange={e => setFilterValue(e.target.value)}
+          placeholder="Найти статью"
+        />
+      </ModalFormAddArticles>
       <section>
-        <ArticlesList onDelete={onDeleteArticle} articles={articles} />
+        <ArticlesList
+          onDelete={deleteArticleHandler}
+          articles={filtredArticles}
+        />
       </section>
     </div>
   );

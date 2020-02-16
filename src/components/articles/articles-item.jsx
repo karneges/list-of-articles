@@ -1,5 +1,5 @@
 import React from "react";
-import './articles.scss'
+import "./articles.scss";
 const ArticlesItem = ({
   title = "",
   body = "",
@@ -12,23 +12,23 @@ const ArticlesItem = ({
         <h3>{title}</h3>
       </header>
       <section>
-        <p>{body}</p>
+        <p style={{ wordWrap: "break-word" }}>{body}</p>
       </section>
       <footer>
         <div className="tags">
-          {tags.map((tag)=> {
+          {tags.map(tag => {
             return (
-              <button 
-              key={tag}
-              className="btn btn-xs btn-default btn__tags">{tag}</button>
-            )
+              <button key={tag} className="btn btn-xs btn-default btn__tags">
+                {tag}
+              </button>
+            );
           })}
         </div>
       </footer>
       <div className="controls">
-        <button 
-        onClick={onDelete}
-        className="btn btn-danger btn-mini">удалить</button>
+        <button onClick={onDelete} className="btn btn-danger btn-mini">
+          удалить
+        </button>
       </div>
     </article>
   );
