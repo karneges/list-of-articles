@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "6d5c2bda0b4f43e9fce33083912c25ad",
+    "revision": "45d1a6a584278689c24b42ad1421c28f",
     "url": "/karneges.github.io/listofarticlse/index.html"
   },
   {
