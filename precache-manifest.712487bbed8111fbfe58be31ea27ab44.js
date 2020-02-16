@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a523c54d058c493d14d364d9bdbbff03",
+    "revision": "6cda1a2ef86a84737f555c004fd4e2cb",
     "url": "/karneges.github.io/listofarticles/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/karneges.github.io/listofarticles/static/css/2.9ddb28ea.chunk.css"
   },
   {
-    "revision": "75873a93778070a3240d",
+    "revision": "348b5bf2ce27676f29e0",
     "url": "/karneges.github.io/listofarticles/static/css/main.2c00b9b4.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/karneges.github.io/listofarticles/static/js/2.16c6c36e.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "75873a93778070a3240d",
-    "url": "/karneges.github.io/listofarticles/static/js/main.a69b960b.chunk.js"
+    "revision": "348b5bf2ce27676f29e0",
+    "url": "/karneges.github.io/listofarticles/static/js/main.33b06c0a.chunk.js"
   },
   {
     "revision": "9792601b1aab618687b4",
