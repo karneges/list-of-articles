@@ -11,14 +11,14 @@ function App() {
   const [articles, setArticles] = useState(getInitialState);
   const { filtredArticles, setFilterValue, filterValue } = useFilterArticles(
     articles
-  );  
+  );
   const deleteArticleHandler = id => {
     setArticles(prev => {
       return prev.filter(item => item.id !== id);
     });
   };
   const addArticlesHandler = item => {
-    setArticles(prev => [{...item,id:getNewId(articles)}, ...prev]);
+    setArticles(prev => [{ ...item, id: getNewId(articles) }, ...prev]);
   };
   useEffect(() => {
     localStorage.setItem("data", JSON.stringify(articles));
