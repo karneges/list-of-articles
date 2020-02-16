@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from "react";
+import ArticlesList from "./components/articles/articles-list";
+import initialState from "./initials-state/initial-state";
+import Header from "./components/header/header";
+import MyModal from "./components/modal/modal";
+import CollectionPage from "./components/modal/test-modal";
 function App() {
+  const [articles, setArticles] = useState(initialState);
+
+  const onDeleteArticle = id => {
+    setArticles((prev)=>{
+      return prev.filter((item)=>item.id !== id)
+    })
+  };
+  const onAddItem = () =>{}
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container">
+      <Header />
+      {/* <MyModal/> */}
+      <CollectionPage/>
+      <section>
+        <ArticlesList onDelete={onDeleteArticle} articles={articles} />
+      </section>
     </div>
   );
 }
