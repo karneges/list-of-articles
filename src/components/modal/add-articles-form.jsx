@@ -15,6 +15,7 @@ const AddArticlesForm = Form.create({ name: "form_in_modal" })(
       >
         <Form layout="vertical">
           <MyFormItem
+            placeholder={"заголовок статьи"}
             countSymbols={3}
             getFieldDecorator={getFieldDecorator}
             label={"Заголовок"}
@@ -24,6 +25,7 @@ const AddArticlesForm = Form.create({ name: "form_in_modal" })(
             }
           />
           <MyFormItem
+            placeholder={"текст статьи"}
             textArea={true}
             countSymbols={10}
             getFieldDecorator={getFieldDecorator}
@@ -34,6 +36,7 @@ const AddArticlesForm = Form.create({ name: "form_in_modal" })(
             }
           />
           <MyFormItem
+            placeholder={"тэги,через запятую"}
             countSymbols={5}
             getFieldDecorator={getFieldDecorator}
             label={"Тэги"}

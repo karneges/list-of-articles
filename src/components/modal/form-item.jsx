@@ -1,9 +1,11 @@
 import React from "react";
 import { Form, Input } from "antd";
 
-const MyFormItem = ({getFieldDecorator,label,title,errMessage,countSymbols,textArea}) => {
+const MyFormItem = ({getFieldDecorator,label,title,errMessage,countSymbols,textArea,placeholder}) => {
   return (
-    <Form.Item label={label}>
+    <Form.Item 
+    
+    label={label}>
       {getFieldDecorator(title, {
         rules: [
           {
@@ -23,7 +25,7 @@ const MyFormItem = ({getFieldDecorator,label,title,errMessage,countSymbols,textA
             }
           }
         ]
-      })(!textArea?<Input /> :<Input.TextArea/>)}
+      })(!textArea?<Input placeholder={placeholder} /> :<Input.TextArea placeholder={placeholder}/>)}
     </Form.Item>
   );
 };
