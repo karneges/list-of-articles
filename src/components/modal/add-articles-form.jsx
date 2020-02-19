@@ -1,10 +1,11 @@
-import React from "react";
+import React, {  useMemo } from "react";
 import { Modal, Form } from "antd";
 import MyFormItem from "./form-item";
 
 const AddArticlesForm = Form.create({ name: "form_in_modal" })(
   ({ visible, onCancel, onCreate, form }) => {
-    const { getFieldDecorator } = form;
+    const { getFieldDecorator } = useMemo(()=>form,[form])
+
     return (
       <Modal
         visible={visible}
